@@ -32,6 +32,7 @@ export async function fetchRevenue() {
   }
 }
 
+// 获取最新创建的5张发票，并按照日期降序排列
 export async function fetchLatestInvoices() {
   try {
     const data = await sql<LatestInvoiceRaw>`
