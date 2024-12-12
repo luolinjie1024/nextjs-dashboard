@@ -17,6 +17,8 @@ async function getUser(email: string): Promise<User | undefined> {
 }
 
 export const { auth, signIn, signOut } = NextAuth({
+    // `...`扩展运算符用于将 authConfig 对象中的所有可枚举属性复制到一个新的对象中。
+    // 这意味着 authConfig 中定义的所有配置项都将被包含在 NextAuth 函数的配置中
     ...authConfig,
     providers: [
         Credentials({
@@ -33,7 +35,7 @@ export const { auth, signIn, signOut } = NextAuth({
                     const passwordsMatch = await bcrypt.compare(password, user.password);
                     if (passwordsMatch) return user;
                 }
-
+                console.log('Invalid credentials');
                 return null;
             },
         }),
