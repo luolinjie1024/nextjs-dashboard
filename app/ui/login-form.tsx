@@ -91,5 +91,3 @@ function LoginButton() {
       </Button>
   );
 }
-//登录用户名密码：
-// user@nextmail.com 123456

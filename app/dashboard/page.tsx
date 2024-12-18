@@ -3,7 +3,29 @@ import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import {lusitana} from '@/app/ui/fonts';
 import {fetchRevenue, fetchLatestInvoices, fetchCardData} from '@/app/lib/data';
+import {Metadata} from "next";
 export const dynamic = 'auto'
+
+
+export const metadata: Metadata = {
+    title: 'Dashboard',
+    description: 'Dashboard',
+    keywords: 'Dashboard',
+    alternates: {
+        canonical: 'https://nextjs.org',
+        languages: {
+            'en-US': 'https://nextjs.org/en-US',
+            'de-DE': 'https://nextjs.org/de-DE',
+        },
+        media: {
+            'only screen and (max-width: 600px)': 'https://nextjs.org/mobile',
+        },
+        types: {
+            'application/rss+xml': 'https://nextjs.org/rss',
+        },
+    },
+};
+
 export default async function Page() {
     const revenue = await fetchRevenue();
     const latestInvoices = await fetchLatestInvoices();
