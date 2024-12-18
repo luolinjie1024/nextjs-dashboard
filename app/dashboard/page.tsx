@@ -9,8 +9,8 @@ export const dynamic = 'auto'
 
 export const metadata: Metadata = {
     title: 'Dashboard',
-    description: 'Dashboard',
-    keywords: 'Dashboard',
+    description: 'this is a dashboard demo build by next.js',
+    keywords: 'next.js,Dashboard,demo',
     alternates: {
         canonical: 'https://nextjs.org',
         languages: {
@@ -38,7 +38,7 @@ export default async function Page() {
     return (
         <main>
             <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-                仪表板
+                <a href="./" title="仪表板">仪表板</a>
             </h1>
             {/*卡片展示*/}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
